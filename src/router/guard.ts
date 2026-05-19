@@ -1,9 +1,16 @@
 import type { Router } from "vue-router"
+import { routerConfig } from "@/router/config"
+import { usePermissionStore } from "@/pinia/stores/permission"
 
 export function registerNavigationGuard(router: Router) {
 
     // 全局前置守卫
     router.beforeEach(async (to, _from) => {
+        const permissionStore = usePermissionStore()
+
+        // routerConfig.dynamic
+        permissionStore.setAllRoutes()
+
         return { ...to, replace: true }
     })
 

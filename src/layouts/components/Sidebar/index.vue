@@ -5,7 +5,11 @@ import { useDevice } from "@/common/composables/useDevice"
 import { useLayoutMode } from "@/common/composables/useLayoutMode"
 import { useSettingsStore } from "@/pinia/stores/settings"
 import { useAppStore } from "@/pinia/stores/app"
+import { usePermissionStore } from "@/pinia/stores/permission"
 import { getCssVar } from "@/common/utils/css"
+import { ElScrollbar, ElMenu } from 'element-plus'
+
+import Item from "./Item.vue"
 
 const { isLeft, isTop } = useLayoutMode()
 
@@ -27,13 +31,13 @@ const route = useRoute()
 
 const appStore = useAppStore()
 
-// const permissionStore = usePermissionStore()
+const permissionStore = usePermissionStore()
 
 const settingsStore = useSettingsStore()
 
 const activeMenu = computed(() => route.meta.activeMenu || route.path)
 
-// const noHiddenRoutes = computed(() => permissionStore.routes.filter(item => !item.meta?.hidden))
+const noHiddenRoutes = computed(() => permissionStore.routes.filter(item => !item.meta?.hidden))
 
 const isCollapse = computed(() => !appStore.sidebar.opened)
 
@@ -52,7 +56,7 @@ const tipLineWidth = computed(() => !isTop.value ? "2px" : "0px")
     <!-- <Logo v-if="isLogo" :collapse="isCollapse" /> -->
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
-        :default-active="activeMenu"
+        
         :collapse="isCollapse && !isTop"
         :background-color="backgroundColor"
         :text-color="textColor"

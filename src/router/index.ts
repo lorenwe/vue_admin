@@ -1,6 +1,7 @@
 import { createRouter } from "vue-router"
 import type { RouteRecordRaw } from "vue-router"
 import { routerConfig } from "./config"
+import { registerNavigationGuard } from "./guard"
 const Layouts = () => import("@/layouts/index.vue")
 
 /**
@@ -64,3 +65,6 @@ export const router = createRouter({
   history: routerConfig.history,
   routes: constantRoutes
 })
+
+// 注册路由导航守卫
+// registerNavigationGuard(router)

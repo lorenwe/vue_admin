@@ -5,6 +5,7 @@ import { useAppStore } from "@/pinia/stores/app"
 import { useSettingsStore } from "@/pinia/stores/settings"
 import { computed } from "vue"
 import { storeToRefs } from 'pinia'
+import { NavigationBar, Sidebar, TagsView, AppMain } from "../components"
 
 
 

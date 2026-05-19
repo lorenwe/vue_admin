@@ -5,17 +5,19 @@ import { useSettingsStore } from "@/pinia/stores/settings"
 
 import { useLayoutMode } from "@/common/composables/useLayoutMode"
 import { useDevice } from "@/common/composables/useDevice"
-
+import LeftMode from "./modes/LeftMode.vue"
 
 const settingsStore = useSettingsStore()
 
-const { showSettings, showTagsView, showWatermark } = storeToRefs(settingsStore)
+// const { showSettings, showTagsView, showWatermark } = storeToRefs(settingsStore)
 
 const { isMobile } = useDevice()
 
 const { isLeft, isTop, isLeftTop } = useLayoutMode()
 
-import LeftMode from "./modes/LeftMode.vue"
+console.log("左侧模式")
+
+
 
 </script>
 
