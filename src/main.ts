@@ -5,7 +5,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // import 'element-plus/dist/index.css'
 import "normalize.css"  // 清楚默认样式
-import "element-plus/theme-chalk/dark/css-vars.css"
+import "element-plus/theme-chalk/dark/css-vars.css" // 引入暗黑模式的核心变量文件
 import "@/common/assets/styles/index.scss"
 
 // 创建应用实例
