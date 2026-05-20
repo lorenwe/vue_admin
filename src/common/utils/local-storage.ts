@@ -1,7 +1,9 @@
 import { CacheKey } from "@/common/constants/cache-key"
 import type { SidebarClosed, SidebarOpened } from "@/common/constants/app-key"
+import type { ThemeName } from "@/common/composables/useTheme"
 import type { LayoutsConfig } from "@/layouts/config"
 import type { TagView } from "@/pinia/stores/tags-view"
+
 
 // #region Token
 export function getToken() {
@@ -43,13 +45,13 @@ export function setSidebarStatus(sidebarStatus: SidebarOpened | SidebarClosed) {
 // #endregion
 
 // #region 正在应用的主题名称
-// export function getActiveThemeName() {
-//   return localStorage.getItem(CacheKey.ACTIVE_THEME_NAME) as ThemeName | null
-// }
+export function getActiveThemeName() {
+  return localStorage.getItem(CacheKey.ACTIVE_THEME_NAME) as ThemeName | null
+}
 
-// export function setActiveThemeName(themeName: ThemeName) {
-//   localStorage.setItem(CacheKey.ACTIVE_THEME_NAME, themeName)
-// }
+export function setActiveThemeName(themeName: ThemeName) {
+  localStorage.setItem(CacheKey.ACTIVE_THEME_NAME, themeName)
+}
 // #endregion
 
 // #region 标签栏

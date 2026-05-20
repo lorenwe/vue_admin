@@ -39,6 +39,8 @@ const activeMenu = computed(() => route.meta.activeMenu || route.path)
 
 const noHiddenRoutes = computed(() => permissionStore.routes.filter(item => !item.meta?.hidden))
 
+console.log(noHiddenRoutes)
+
 const isCollapse = computed(() => !appStore.sidebar.opened)
 
 const isLogo = computed(() => isLeft.value && settingsStore.showLogo)

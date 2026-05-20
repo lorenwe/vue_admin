@@ -67,4 +67,4 @@ export const router = createRouter({
 })
 
 // 注册路由导航守卫
-// registerNavigationGuard(router)
+registerNavigationGuard(router)

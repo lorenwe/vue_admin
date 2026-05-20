@@ -10,8 +10,9 @@ export function registerNavigationGuard(router: Router) {
 
         // routerConfig.dynamic
         permissionStore.setAllRoutes()
-
-        return { ...to, replace: true }
+        console.log("全局前置守卫")
+        // return { ...to, replace: true }
+        return true
     })
 
     // 全局后置钩子

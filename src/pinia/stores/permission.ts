@@ -15,6 +15,7 @@ export const usePermissionStore = defineStore("permission", () => {
 
   // 所有路由 = 所有常驻路由 + 所有动态路由  管理员用
   const setAllRoutes = () => {
+    // console.log(constantRoutes)
     set([])
   }
 
