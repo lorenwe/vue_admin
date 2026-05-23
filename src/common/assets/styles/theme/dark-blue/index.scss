@@ -1,2 +1,3 @@
-@import "./variables.scss";
-@import "../core/index.scss";
+@use "../core" as *;
+
+@include generate-theme("dark-blue", #001b44);
